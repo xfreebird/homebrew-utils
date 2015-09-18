@@ -1,4 +1,4 @@
-class CrashlyticsUploadIPA < Formula
+class CrashlyticsUploadIpa < Formula
   desc "Upload an IPA to Crashlytics without Crashlytics.framework"
   homepage "https://github.com/xfreebird/crashlytics-upload-ipa"
   url "https://github.com/xfreebird/crashlytics-upload-ipa/archive/1.0.0.tar.gz"
