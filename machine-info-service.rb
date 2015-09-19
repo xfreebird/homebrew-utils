@@ -1,9 +1,9 @@
 class MachineInfoService < Formula
   desc "OS X build machine info service"
   homepage "https://github.com/xfreebird/osx-build-machine-info-service"
-  url "https://github.com/xfreebird/osx-build-machine-info-service/archive/1.0.1.tar.gz"
-  sha256 "cb0183934e3dab81dec5465f04a1422e65aac4b78744ee2385afd428552c6f24"
-  version "1.0.1"
+  url "https://github.com/xfreebird/osx-build-machine-info-service/archive/1.0.2.tar.gz"
+  sha256 "cd6e46ea08b52ca6ccd7609130dc6242884c9353a25ec2ac4cf5785522c002e4"
+  version "1.0.2"
 
   depends_on "node"
 
