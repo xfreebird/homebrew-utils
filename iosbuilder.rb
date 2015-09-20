@@ -14,7 +14,7 @@ class Iosbuilder < Formula
     system "ln", "-s", "iosbuilder.sh", "iosbuilder"
     bin.install "iosbuilder.sh"
     bin.install "iosbuilder"
-    #system "brew", "cask", "install", "oclint", "--force"
+    system "brew-cask", "install", "oclint", "--force"
     system "sudo", "gem", "install", "ocunit2junit", "xcpretty", "cocoapods"
   end
 
