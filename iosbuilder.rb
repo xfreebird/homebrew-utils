@@ -1,4 +1,4 @@
-class IosBuilder < Formula
+class Iosbuilder < Formula
   desc "A script for building, testing and analyzing iOS projects"
   homepage "https://github.com/xfreebird/iosbuilder"
   url "https://github.com/xfreebird/iosbuilder/archive/2.0.1.tar.gz"
