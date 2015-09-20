@@ -18,13 +18,14 @@ class Iosbuilder < Formula
     user = ENV['USER']
     keychain = "/Users/#{user}/Library/Keychains/iosbuilder.keychain"
     unless File.exist?(keychain)
-      system "HOME=/Users/#{user}", "security", "create-keychain", "-p", "''", "#{keychain}"
-      system "HOME=/Users/#{user}", "open", "#{keychain}"
+      system "security", "create-keychain", "-p", "''", "#{keychain}"
+      system "open", "#{keychain}"
     end
   end
 
   test do
     system "iosbuilder.sh", "--version"
+
   end
 
   def caveats; <<-EOS.undent
