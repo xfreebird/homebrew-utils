@@ -11,13 +11,17 @@ class Iosbuilder < Formula
   depends_on :xcode
 
   def install
-    system "ln", "-s", "iosbuilder.sh", "iosbuilder"
+    FileUtils.ln_s "iosbuilder.sh", "iosbuilder"
     bin.install "iosbuilder.sh"
     bin.install "iosbuilder"
     system "brew-cask", "install", "oclint", "--force"
     system "sudo", "gem", "install", "ocunit2junit", "xcpretty", "cocoapods"
-    system "[ ! -f ~/Library/Keychains/iosbuilder.keychain ] && security create-keychain -p '' iosbuilder.keychain"
-    system "open ~/Library/Keychains/iosbuilder.keychain"
+
+    keychain = File.expand_path("~/Library/Keychains/iosbuilder.keychain")
+    unless File.exist?(keychain)
+      system "security", "create-keychain", "-p", "''", "#{keychain}"
+      system "open", "#{keychain}"
+    end
   end
 
   test do
