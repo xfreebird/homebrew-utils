@@ -16,6 +16,8 @@ class Iosbuilder < Formula
     bin.install "iosbuilder"
     system "brew-cask", "install", "oclint", "--force"
     system "sudo", "gem", "install", "ocunit2junit", "xcpretty", "cocoapods"
+    system "[ ! -f ~/Library/Keychains/iosbuilder.keychain ] && security create-keychain -p '' iosbuilder.keychain"
+    system "open ~/Library/Keychains/iosbuilder.keychain"
   end
 
   test do
