@@ -15,10 +15,12 @@ class Iosbuilder < Formula
     bin.install "iosbuilder.sh"
     bin.install "iosbuilder"
     system "brew-cask", "install", "oclint"
+    system "sudo", "gem", "install", "ocunit2junit", "xcpretty", "cocoapods"
+
     user = ENV['USER']
     keychain = "/Users/#{user}/Library/Keychains/iosbuilder.keychain"
     unless File.exist?(keychain)
-      system "security", "create-keychain", "-p", "''", "#{keychain}"
+      system "security", "create-keychain", "-p", "", "#{keychain}"
       system "bash", "-c", "HOME='/Users/#{user}' open #{keychain}"
     end
   end
@@ -29,10 +31,7 @@ class Iosbuilder < Formula
 
   def caveats; <<-EOS.undent
     The iosbuilder.keychain was created in ~/Library/Keychains/iosbuilder.keychain.
-    To unlock the keychain use a blank password (e.g. it has no password)
-
-    Please install Ruby gems manually by running:
-        sudo gem install ocunit2junit xcpretty cocoapods
+    And it has a blank password (e.g. it has no password)
     EOS
   end
 end
