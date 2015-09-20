@@ -8,16 +8,15 @@ class Iosbuilder < Formula
   depends_on "xctool"
   depends_on "gcovr"
   depends_on "caskroom/cask/brew-cask"
-  depends_on "ocunit2junit" => :ruby
-  depends_on "xcpretty" => :ruby
-  depends_on "cocoapods" => :ruby
   depends_on :xcode
 
   def install
     system "ln", "-s", "iosbuilder.sh", "iosbuilder"
     bin.install "iosbuilder.sh"
     bin.install "iosbuilder"
+    puts "Installing dependencies"
     system "brew", "cask", "install", "oclint"
+    system "sudo", "gem", "install", "ocunit2junit", "xcpretty", "cocoapods"
   end
 
   test do
