@@ -15,7 +15,6 @@ class Iosbuilder < Formula
     bin.install "iosbuilder.sh"
     bin.install "iosbuilder"
     system "brew-cask", "install", "oclint"
-    system "sudo", "gem", "install", "ocunit2junit", "xcpretty", "cocoapods"
 
     user = ENV['USER']
     keychain = "/Users/#{user}/Library/Keychains/iosbuilder.keychain"
@@ -30,6 +29,8 @@ class Iosbuilder < Formula
   end
 
   def caveats; <<-EOS.undent
+    Please install ocunit2junit, xcpretty and cocoapods:
+    sudo gem install ocunit2junit xcpretty cocoapods
     The iosbuilder.keychain was created in ~/Library/Keychains/iosbuilder.keychain.
     And it has a blank password (e.g. it has no password)
     EOS
