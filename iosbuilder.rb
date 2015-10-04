@@ -1,7 +1,7 @@
 class Iosbuilder < Formula
   desc "A script for building, testing and analyzing iOS projects"
   homepage "https://github.com/xfreebird/iosbuilder"
-  url "https://github.com/xfreebird/iosbuilder/archive/2.0.2.tar.gz"
+  url "https://github.com/xfreebird/iosbuilder/archive/2.0.2.zip"
   sha256 "b2ab9eebbd60e5e49d82425d39e3cb252179807fa12fd833aaa208f867c39759"
   version "2.0.2"
 
