@@ -1,9 +1,9 @@
 class Iosbuilder < Formula
   desc "A script for building, testing and analyzing iOS projects"
   homepage "https://github.com/xfreebird/iosbuilder"
-  url "https://github.com/xfreebird/iosbuilder/archive/2.0.2.zip"
-  sha256 "b2ab9eebbd60e5e49d82425d39e3cb252179807fa12fd833aaa208f867c39759"
-  version "2.0.2"
+  url "https://github.com/xfreebird/iosbuilder/archive/2.0.3.zip"
+  sha256 "4d88d649ed5a316d6bd7e50127f4f51bd4afc9f01d7eddc430690a21b0cb35df"
+  version "2.0.3"
 
   depends_on "xctool"
   depends_on "gcovr"
@@ -31,7 +31,7 @@ class Iosbuilder < Formula
   def caveats; <<-EOS.undent
     Please install ocunit2junit, xcpretty and cocoapods:
     sudo gem install ocunit2junit xcpretty cocoapods
-    The iosbuilder.keychain was created in ~/Library/Keychains/iosbuilder.keychain.
+    The iosbuilder.keychain is located at ~/Library/Keychains/iosbuilder.keychain.
     And it has a blank password (e.g. it has no password)
     EOS
   end
