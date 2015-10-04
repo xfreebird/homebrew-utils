@@ -1,9 +1,9 @@
 class Iosbuilder < Formula
   desc "A script for building, testing and analyzing iOS projects"
   homepage "https://github.com/xfreebird/iosbuilder"
-  url "https://github.com/xfreebird/iosbuilder/archive/2.0.1.tar.gz"
-  sha256 "3605c59a51e4cebd91a54509b025a402c514ceb6e10e3584686a04657afb1bae"
-  version "2.0.1"
+  url "https://github.com/xfreebird/iosbuilder/archive/2.0.2.tar.gz"
+  sha256 "b2ab9eebbd60e5e49d82425d39e3cb252179807fa12fd833aaa208f867c39759"
+  version "2.0.2"
 
   depends_on "xctool"
   depends_on "gcovr"
