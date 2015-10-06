@@ -17,7 +17,7 @@ class Iosbuilder < Formula
     unless File.exist?(keychain)
       system "security", "create-keychain", "-p", "", "#{keychain}"
       system "security", "set-keychain-settings", "#{keychain}"
-      system "bash", "-c", "HOME='/Users/#{user}' security list-keychains -s #{keychain} '$HOME/Library/Keychains/login.keychain'"
+      system "bash", "-c", "HOME='/Users/#{user}' security list-keychains -s #{keychain} \"$HOME/Library/Keychains/login.keychain\""
     end
   end
 
