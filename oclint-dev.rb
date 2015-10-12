@@ -4,7 +4,7 @@ class OclintDev < Formula
   homepage 'http://oclint.org'
   url 'http://archives.oclint.org/nightly/oclint-0.9.dev.d18b401-x86_64-darwin-14.5.0.tar.gz'
   version '0.9.dev.d18b401'
-  sha1 '6c14a116b1a87139f5b646f1e2119ba0aef717cb68853f1060c69d2197547d06'
+  sha1 '357182ca204e5740af2b6250911686a96fb8045a'
 
   def install
     lib.install Dir['lib/clang']
