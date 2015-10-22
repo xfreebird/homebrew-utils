@@ -3,7 +3,7 @@ class MachineInfoService < Formula
   homepage "https://github.com/xfreebird/osx-build-machine-info-service"
   url "https://github.com/xfreebird/osx-build-machine-info-service/archive/1.0.5.tar.gz"
   sha256 "17fa510ff24448c2f4ff387d8de4d27f4ca9369aae60bba5d7dcd9b0cdca8618"
-  version "1.0.6"
+  version "1.0.7"
 
   depends_on "node"
 
@@ -13,7 +13,7 @@ class MachineInfoService < Formula
     share.install "share/httpd.conf"
     share.install "share/index.html"
     libexec.install "libexec/websocketd.js"
-    `cd /usr/local/opt/machine-info-service; npm install websocket`
+    `cd /usr/local/opt/machine-info-service; /usr/local/bin/npm install websocket`
   end
 
   test do
