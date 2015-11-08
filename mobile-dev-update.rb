@@ -1,9 +1,9 @@
 class MobileDevUpdate < Formula
   desc "Upgrade your's Mobile Dev machine software"
   homepage "https://github.com/xfreebird/mobile-dev-bootstrap"
-  url "https://github.com/xfreebird/mobile-dev-bootstrap/archive/1.0.7.zip"
-  sha256 "5e21a04c1720a7d8c51b941fc6e6a4440a55faa3699a4f4edd8f80f11f808b9a"
-  version "1.0.7"
+  url "https://github.com/xfreebird/mobile-dev-bootstrap/archive/1.0.8.zip"
+  sha256 "9898e78c7ac4971c8ecde7d91d2aba6a0d344f3b2094bd53288d5372003ee48c"
+  version "1.0.8"
 
   def install
     FileUtils.ln_s "mobile-dev-update.sh", "mobile-dev-update"
