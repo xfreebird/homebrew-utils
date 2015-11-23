@@ -2,9 +2,9 @@ require 'formula'
 
 class OclintDev < Formula
   homepage 'http://oclint.org'
-  url 'http://archives.oclint.org/nightly/oclint-0.9.dev.d18b401-x86_64-darwin-14.5.0.tar.gz'
-  version '0.9.dev.d18b401'
-  sha1 '357182ca204e5740af2b6250911686a96fb8045a'
+  url 'https://github.com/oclint/oclint/releases/download/v0.10.1/oclint-0.10.1-x86_64-darwin-15.0.0.tar.gz'
+  version '0.10.1'
+  sha1 'e9111f1a79aac54af17f62c38be280bcefd54ba3cdc09091ef127d906abfac83'
 
   def install
     lib.install Dir['lib/clang']
