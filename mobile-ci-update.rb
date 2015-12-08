@@ -1,9 +1,9 @@
 class MobileCiUpdate < Formula
   desc "Upgrade your's Mobile CI machine software"
   homepage "https://github.com/xfreebird/mobile-ci-bootstrap"
-  url "https://github.com/xfreebird/mobile-ci-bootstrap/archive/1.0.12.zip"
-  sha256 "b9d26ac85c9fe7475fb06df486fe50a6fb6316b0d6c7c72048540787b2f71cc2"
-  version "1.0.12"
+  url "https://github.com/xfreebird/mobile-ci-bootstrap/archive/1.0.13.zip"
+  sha256 "5c965e69bdd0c9963ddd6004da269b80aa99e68c7b266b09e5b8ca026667435a"
+  version "1.0.13"
 
   def install
     FileUtils.ln_s "mobile-ci-update.sh", "mobile-ci-update"
