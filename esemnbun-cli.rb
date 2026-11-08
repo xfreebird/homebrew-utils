@@ -1,13 +1,15 @@
 class EsemnbunCli < Formula
   desc "Electronic ID signing and local MCP command-line tools"
   homepage "https://esemnbun.md"
-  url "https://github.com/xfreebird/smartcard/releases/download/v0.2.6/esemnbun-0.2.6-macos-universal.tar.gz"
+  url "https://esemnbun.md/packages/downloads/v0.2.6/esemnbun-0.2.6-macos-universal.tar.gz"
   version "0.2.6"
   sha256 "ecbafa38fabc1909d2106e68fe3d086a2e61f54c7dc773c218baf7e5053dad49"
   license "MIT"
 
   depends_on :macos
-  depends_on macos: :sequoia
+  on_macos do
+    depends_on macos: :sequoia
+  end
 
   def install
     bin.install "esemnbun", "esemnbun-mcp"
