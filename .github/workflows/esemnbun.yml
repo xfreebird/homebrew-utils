@@ -1,0 +1,38 @@
+name: Update eSemnBun packages
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '43 */6 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: esemnbun-package-update
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: python3 scripts/update-esemnbun.py
+      - run: ruby -c esemnbun-cli.rb
+      - name: Save updated definitions
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add esemnbun-cli.rb bucket/esemnbun-cli.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update eSemnBun CLI packages'
+            git push
+          fi
+  homebrew:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install and test published CLI
+        env:
+          HOMEBREW_NO_AUTO_UPDATE: '1'
+        run: |
+          brew tap xfreebird/utils "$GITHUB_WORKSPACE"
+          brew install xfreebird/utils/esemnbun-cli
+          brew test xfreebird/utils/esemnbun-cli
+          test -x "$(brew --prefix)/bin/esemnbun-mcp"

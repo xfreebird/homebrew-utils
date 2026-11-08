@@ -1,0 +1,23 @@
+{
+  "version": "0.2.6",
+  "description": "eSemnBun signing CLI and local MCP server",
+  "homepage": "https://esemnbun.md",
+  "license": "MIT",
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/xfreebird/smartcard/releases/download/v0.2.6/esemnbun-cli-0.2.6-windows-x64.zip",
+      "hash": "9f8a3189792917c065717861f4ae09f208bd9a547f6fc610bd2fe75ccb7b9231"
+    }
+  },
+  "bin": "esemnbun.exe",
+  "checkver": {
+    "github": "https://github.com/xfreebird/smartcard"
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/xfreebird/smartcard/releases/download/v$version/esemnbun-cli-$version-windows-x64.zip"
+      }
+    }
+  }
+}
