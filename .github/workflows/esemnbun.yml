@@ -39,3 +39,23 @@ jobs:
           brew install xfreebird/utils/esemnbun-cli
           brew test xfreebird/utils/esemnbun-cli
           test -x "$(brew --prefix)/bin/esemnbun-mcp"
+  scoop:
+    needs: update
+    runs-on: windows-latest
+    steps:
+      - name: Install Scoop and verify public CLI package
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          Invoke-RestMethod https://get.scoop.sh -OutFile install-scoop.ps1
+          & ./install-scoop.ps1 -RunAsAdmin -ScoopDir "$env:RUNNER_TEMP/scoop"
+          if ($LASTEXITCODE -ne 0) { throw 'Scoop setup failed' }
+          $scoop = "$env:RUNNER_TEMP/scoop/shims/scoop.ps1"
+          & $scoop bucket add esemnbun https://github.com/xfreebird/homebrew-utils
+          if ($LASTEXITCODE -ne 0) { throw 'Bucket setup failed' }
+          & $scoop install esemnbun/esemnbun-cli
+          if ($LASTEXITCODE -ne 0) { throw 'Scoop installation failed' }
+          & "$env:RUNNER_TEMP/scoop/shims/esemnbun.exe" --help
+          if ($LASTEXITCODE -ne 0) { throw 'CLI smoke check failed' }
+          & $scoop uninstall esemnbun-cli
+          if ($LASTEXITCODE -ne 0) { throw 'Scoop uninstall failed' }
