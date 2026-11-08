@@ -25,9 +25,12 @@ jobs:
             git push
           fi
   homebrew:
+    needs: update
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          ref: master
       - name: Install and test published CLI
         env:
           HOMEBREW_NO_AUTO_UPDATE: '1'
