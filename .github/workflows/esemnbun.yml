@@ -59,3 +59,22 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw 'CLI smoke check failed' }
           & $scoop uninstall esemnbun-cli
           if ($LASTEXITCODE -ne 0) { throw 'Scoop uninstall failed' }
+  fedora:
+    needs: update
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install signed RPM from public repository
+        run: |
+          mkdir package-test
+          curl -fsSLo package-test/signing-key.asc https://esemnbun.md/packages/signing-key.asc
+          curl -fsSLo package-test/esemnbun.repo https://esemnbun.md/packages/esemnbun.repo
+          fingerprint=$(gpg --show-keys --with-colons package-test/signing-key.asc | awk -F: '$1=="fpr" {print $10; exit}')
+          test "$fingerprint" = F8075499A4B311BA30E53156E5622B86C8280D0B
+          docker run --rm -v "$PWD/package-test:/package-test:ro" fedora:44 bash -ec '
+            rpm --import /package-test/signing-key.asc
+            cp /package-test/esemnbun.repo /etc/yum.repos.d/
+            dnf install -y esemnbun-cli
+            esemnbun --version
+            test -x /usr/bin/esemnbun-mcp
+            dnf remove -y esemnbun-cli
+          '
