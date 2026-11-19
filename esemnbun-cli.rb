@@ -1,9 +1,9 @@
 class EsemnbunCli < Formula
   desc "Electronic ID signing and local MCP command-line tools"
   homepage "https://esemnbun.md"
-  url "https://esemnbun.md/packages/downloads/v0.2.11/esemnbun-0.2.11-macos-universal.tar.gz"
-  version "0.2.11"
-  sha256 "5a10f063fd70dd2add676205e5b6b4bad023e644043784cd66c26c4920dbec17"
+  url "https://esemnbun.md/packages/downloads/v0.2.13/esemnbun-0.2.13-macos-universal.tar.gz"
+  version "0.2.13"
+  sha256 "fc3d2b3a49b1a3e4e8798e98c3da5b7ccba36b749f5e574829dfb62887098831"
   license "MIT"
 
   depends_on :macos
