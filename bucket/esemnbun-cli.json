@@ -6,7 +6,7 @@
   "architecture": {
     "64bit": {
       "url": "https://esemnbun.md/packages/downloads/v0.2.14/esemnbun-cli-0.2.14-windows-x64.zip",
-      "hash": "cccf0a2e35636be9405e66adddd22b385db2ccc2acc93d5b60cd67f8089c73af"
+      "hash": "d856228fdddedf2ef15b00e2f92c2ed4cd392453ae42ad888071e5969564cd78"
     }
   },
   "bin": "esemnbun.exe",
