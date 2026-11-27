@@ -1,12 +1,12 @@
 {
-  "version": "0.2.14",
+  "version": "0.2.15",
   "description": "eSemnBun signing CLI and local MCP server",
   "homepage": "https://esemnbun.md",
   "license": "MIT",
   "architecture": {
     "64bit": {
-      "url": "https://esemnbun.md/packages/downloads/v0.2.14/esemnbun-cli-0.2.14-windows-x64.zip",
-      "hash": "d856228fdddedf2ef15b00e2f92c2ed4cd392453ae42ad888071e5969564cd78"
+      "url": "https://esemnbun.md/packages/downloads/v0.2.15/esemnbun-cli-0.2.15-windows-x64.zip",
+      "hash": "9476b77c2fa112f202376097446f3b2c5af7822f0374916fd8e5fe4a445b5b26"
     }
   },
   "bin": "esemnbun.exe",
